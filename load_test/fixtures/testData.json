@@ -1,0 +1,7 @@
+{
+    "users": [
+      { "username": "soap", "password": "soap123" },
+      { "username": "price", "password": "price123" }
+    ]
+  }
+  
