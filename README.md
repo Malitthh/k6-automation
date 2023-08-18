@@ -33,26 +33,77 @@ Define the executor in executor key of the scenario object. The value is the exe
             <td>Shared Iterations</td>
             <td>shared-iterations</td>
             <td>A fixed amount of iterations are shared between a number of VUs.</td>
+            <td>  scenarios: {
+    contacts: {
+      executor: 'shared-iterations',
+      vus: 10,
+      iterations: 200,
+      maxDuration: '30s',
+    },
+  },</td>
         </tr>
         <tr>
             <td>Per VU Iterations</td>
             <td>per-vu-iterations</td>
             <td>Each VU executes an exact number of iterations.</td>
+                        <td>  scenarios: {
+    contacts: {
+      executor: 'per-vu-iterations',
+      vus: 10,
+      iterations: 20,
+      maxDuration: '30s',
+    },
+  },</td>
         </tr>
         <tr>
             <td>Constant VUs</td>
             <td>constant-vus</td>
             <td>A fixed number of VUs execute as many iterations as possible for a specified amount of time.</td>
+                                    <td>  scenarios: {
+    contacts: {
+      executor: 'constant-vus',
+      vus: 10,
+      duration: '30s',
+    },
+  },</td>
         </tr>
         <tr>
             <td>Ramping VUs</td>
             <td>ramping-vus</td>
             <td>A variable number of VUs execute as many iterations as possible for a specified amount of time.</td>
+                                                <td>  scenarios: {
+    contacts: {
+      executor: 'ramping-vus',
+      startVUs: 0,
+      stages: [
+        { duration: '20s', target: 10 },
+        { duration: '10s', target: 0 },
+      ],
+      gracefulRampDown: '0s',
+    },
+  },</td>
         </tr>
         <tr>
             <td>Constant Arrival Rate</td>
             <td>constant-arrival-rate</td>
             <td>A fixed number of iterations are executed in a specified period of time.</td>
+            <td> scenarios: {
+    contacts: {
+      executor: 'constant-arrival-rate',
+
+      // How long the test lasts
+      duration: '30s',
+
+      // How many iterations per timeUnit
+      rate: 30,
+
+      // Start `rate` iterations per second
+      timeUnit: '1s',
+
+      // Pre-allocate VUs
+      preAllocatedVUs: 50,
+    },
+  }, </td>
         </tr>
         <tr>
             <td>Ramping Arrival Rate</td>
