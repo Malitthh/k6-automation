@@ -1,7 +1,7 @@
 ## K6-Automation
 
-Grafana dashbord - 
-run with command K6 run --out influxdb=http://localhost:9999/load_test //LoadTest script.js, while make sure index db is running
+* How to run - K6 run path of the test
+  * e.g, K6 run D:\Learning\Source\Repos\k6-automation\load_test\scripts\ABCTeam\GetScriptArray.js 
 
 K6 Docs - 
 https://k6.io/docs/

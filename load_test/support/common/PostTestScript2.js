@@ -25,27 +25,27 @@ files["C:/Users/name/OneDrive/Documents/k6-automation/load_test/fixtures/test.pd
   "test.pdf"
 );
 
-export default function ()  { 
+export default function () {
 
   const testload = {
     file: files["C:/Users/name/OneDrive/Documents/k6-automation/load_test/fixtures/test.pdf"],
     isoLangCode: 'es'
-  }; 
-    const params = {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          'Accept': '*/*'
-        },
-      };
+  };
+  const params = {
+    headers: {
+      'Content-Type': 'multipart/form-data', //text/plain
+      'Accept': '*/*'
+    },
+  };
 
-    const url = 'https://abc.com/api/endpoint1/endpoint2';
-    
-    const res = http.post(url, testload, params);
-    
-    check(res, {
-        'is status 202': (rs) => rs.status === 202,
-    });
-    console.log(res.headers['X-Test-Id']);
-    console.log(res.status);
-   // return (res.headers['X-Test-Id']);
+  const url = 'http://abc.test';
+
+  const res = http.post(url, testload, params);
+
+  check(res, {
+    'is status 202': (rs) => rs.status === 202,
+  });
+  console.log(res.headers['X-Test-Id']);
+  console.log(res.status);
+  // return (res.headers['X-Test-Id']);
 }
