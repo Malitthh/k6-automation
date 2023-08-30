@@ -37,6 +37,7 @@ export default function () {
   http.get('https://your-api-endpoint.com');
   sleep(1);
 }
+```
 2. Stress Testing
 k6 allows you to quickly increase the number of virtual users in a scenario to assess how the application behaves under higher-than-normal loads. By observing response times and error rates, you can identify the point at which the system starts to exhibit performance issues.
 
