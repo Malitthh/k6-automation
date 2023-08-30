@@ -1,4 +1,4 @@
-## Performance Testing
+## Performance Testing Types
 
 Performance testing is a type of software testing that focuses on assessing the speed, responsiveness, stability, and scalability of a software application under different workloads. Different types of performance testing include load testing, stress testing, volume testing, spike testing, and soak testing. 
 I'll explain each of these concepts and then provide a perspective from the k6 performance testing tool.
