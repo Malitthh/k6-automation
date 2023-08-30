@@ -18,7 +18,7 @@ Now, let's look at these concepts from the perspective of the k6 performance tes
 
 In k6:
 
-Load Testing: In k6, you would define a scenario that simulates a specific number of virtual users making requests to your application. You can control the number of virtual users and the ramp-up time to gradually increase the load.
+1. Load Testing: In k6, you would define a scenario that simulates a specific number of virtual users making requests to your application. You can control the number of virtual users and the ramp-up time to gradually increase the load.
 
 ```javascript
 import http from 'k6/http';
@@ -34,7 +34,7 @@ export default function () {
   sleep(1);
 }
 ```
-Stress Testing: k6 allows you to quickly increase the number of virtual users in a scenario to assess how the application behaves under higher-than-normal loads. By observing response times and error rates, you can identify the point at which the system starts to exhibit performance issues.
+2. Stress Testing: k6 allows you to quickly increase the number of virtual users in a scenario to assess how the application behaves under higher-than-normal loads. By observing response times and error rates, you can identify the point at which the system starts to exhibit performance issues.
 
 ```javascript
 import http from 'k6/http';
@@ -53,7 +53,7 @@ export default function () {
   sleep(0.5);
 }
 ```
-Volume Testing: With k6, you can design tests that involve sending a large volume of data to your application, such as uploading a significant number of files. By monitoring response times and resource utilization, you can detect performance bottlenecks related to data processing.
+3. Volume Testing: With k6, you can design tests that involve sending a large volume of data to your application, such as uploading a significant number of files. By monitoring response times and resource utilization, you can detect performance bottlenecks related to data processing.
 
 ```javascript
 import http from 'k6/http';
@@ -70,7 +70,7 @@ export default function () {
   sleep(2);
 }
 ```
-Spike Testing: You can use k6 to simulate sudden spikes in traffic by rapidly increasing the number of virtual users. This helps you evaluate whether your application can handle unexpected surges without crashing or slowing down excessively.
+4. Spike Testing: You can use k6 to simulate sudden spikes in traffic by rapidly increasing the number of virtual users. This helps you evaluate whether your application can handle unexpected surges without crashing or slowing down excessively.
 
 ```javascript
 import http from 'k6/http';
@@ -89,7 +89,7 @@ export default function () {
   sleep(Math.random() * 0.5);
 }
 ```
-Soak Testing: To perform soak testing with k6, you would set up a scenario that runs for an extended period with a constant load. By monitoring metrics over time, you can detect memory leaks or other issues that might only surface after prolonged usage.
+5. Soak Testing: To perform soak testing with k6, you would set up a scenario that runs for an extended period with a constant load. By monitoring metrics over time, you can detect memory leaks or other issues that might only surface after prolonged usage.
 
 ```javascript
 import http from 'k6/http';
@@ -105,8 +105,5 @@ export default function () {
   sleep(5);
 }
 ```
-
-Remember that k6 provides a flexible scripting interface that allows you to define scenarios that match the specific performance testing needs of your application. The tool's output includes detailed metrics and graphs that help you analyze the performance of your application under different scenarios.
-
 
 Remember that k6 provides a flexible scripting interface that allows you to define scenarios that match the specific performance testing needs of your application. The tool's output includes detailed metrics and graphs that help you analyze the performance of your application under different scenarios.
