@@ -38,8 +38,4 @@ export default function () {
     check(res, {
         ' GET status is 200': (rs) => rs.status === 200 || 201,
     });
-
-
-
-
 }

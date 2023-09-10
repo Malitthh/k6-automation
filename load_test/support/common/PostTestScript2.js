@@ -10,13 +10,13 @@ export const options = {
     http_req_failed: ["rate<0.1"],
   },
   noConnectionReuse: true,
-  scenarios: {
+  /*scenarios: {
     constant_scenario: {
       executor: "constant-vus",
       vus: 1,
       duration: "3s",
     },
-  },
+  },*/
 };
 
 const files = {};

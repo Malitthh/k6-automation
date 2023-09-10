@@ -12,7 +12,7 @@ export const options = {
         http_req_failed: ["rate<0.1"],
     },
     noConnectionReuse: true,
-    scenarios: {
+    /*scenarios: {
         constant_scenario: {
             executor: 'per-vu-iterations',
             vus: 1,
@@ -20,7 +20,7 @@ export const options = {
             maxDuration: '5m'
             //duration: '3s',
         },
-    },
+    },*/
 };
 
 export function getrequestIDs(jsonData) {
