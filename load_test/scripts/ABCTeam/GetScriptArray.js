@@ -41,15 +41,23 @@ export default function () {
         const url = 'http://abc.testresults?request_id=' + reqId;
         const res = http.post(url, params);
         console.log(res.status);
+
         check(res, {
-            ' GET status is 200': (rs) => rs.status === 200 || 201,
+            //'HTTP Status is 200 or 201': (rs) => rs.status === 200 || 201,
+            'HTTP Status is 200 or 201': (rs) => rs.status === 200 || rs.status === 201,
+            'Response Body "Status"': (rs) => {
+                const responseBody = rs.json();
+                const checkStatus = responseBody.Status === 'DONE';
+                console.log(`Response Body Check Result for Request ID ${reqid}: ${checkStatus}`);
+                return checkStatus; 
+            }
         });
     }
 }
 
 export function handleSummary(data) {
     return {
-      "summary.html": htmlReport(data),
+      "GetScriptArray.html": htmlReport(data),
       stdout: textSummary(data, { indent: " ", enableColors: true }),
     };
-  }
+}

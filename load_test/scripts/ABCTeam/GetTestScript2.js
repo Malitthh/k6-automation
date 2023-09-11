@@ -55,7 +55,7 @@ export default function () {
 }
 export function handleSummary(data) {
   return {
-    "summary.html": htmlReport(data),
+    "GetTestScript2.html": htmlReport(data),
     stdout: textSummary(data, { indent: " ", enableColors: true }),
   };
 }
