@@ -7,8 +7,8 @@ var getURL = [];
 
 export const options = {
   thresholds: {
-    http_req_duration: ['p(95)<3000'], //95% of the requests must finish within 3s
-    checks: ['rate>0.99'], //99% pass rate
+    http_req_duration: ['p(95)<3000'], 
+    checks: ['rate>0.99'], 
     http_req_failed: ['rate<0.1']
   },
   noConnectionReuse: true,

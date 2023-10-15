@@ -25,7 +25,7 @@ export const options = {
 };
 
 export default function () {
-    const reqIds = getrequestIDs();
+    const reqIds = getrequestIDs ();
     const params = {
         headers: {
             'Content-Type': 'application/json',

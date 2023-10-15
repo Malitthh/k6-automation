@@ -4,9 +4,9 @@ import { PostTestScript1 } from "../../support/common/PostTestScript1";
 
 export const options = {
     thresholds: {
-        http_req_duration: ["p(95)<3000"], //95% of the requests must finish within 3s
-        http_req_duration: ["p(75)<1500"], //75% of the requests must finish within 1.5s
-        checks: ["rate>0.99"], //99% pass rate
+        http_req_duration: ["p(95)<3000"], 
+        http_req_duration: ["p(75)<1500"], 
+        checks: ["rate>0.99"], 
         http_req_failed: ["rate<0.1"],
     },
     noConnectionReuse: true,
@@ -36,6 +36,6 @@ export default function () {
     console.log(res.status);
 
     check(res, {
-        ' GET status is 200': (rs) => rs.status === 200 || 201,
+        ' GET status is 200 or 201': (rs) => rs.status === 200 || 201,
     });
 }

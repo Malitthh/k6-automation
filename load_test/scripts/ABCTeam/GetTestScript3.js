@@ -3,9 +3,9 @@ import { check } from "k6";
 
 export const options = {
   thresholds: {
-    http_req_duration: ["p(95)<7000"], //95% of the requests must finish within 3s
-    http_req_duration: ["p(75)<9500"], //75% of the requests must finish within 1.5s
-    checks: ["rate>0.95"], //99% pass rate
+    http_req_duration: ["p(95)<7000"], 
+    http_req_duration: ["p(75)<9500"], 
+    checks: ["rate>0.95"], 
     http_req_failed: ["rate<0.1"],
   },
   noConnectionReuse: true,
@@ -66,6 +66,6 @@ export default function () {
     "is status 202": (rs) => rs.status === 202,
   });
   check(GETres, {
-    "is status 202": (rs) => rs.status === 200,
+    "is status 200": (rs) => rs.status === 200,
   });
 }
